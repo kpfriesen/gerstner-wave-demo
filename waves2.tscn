@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Shaders/waves.shader" type="Shader" id=2]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 2 )
+shader_param/frequency = 1.0
+shader_param/wavelength = 1.0
+shader_param/wave_vector = Vector2( 1, 0 )
+shader_param/wave_speed = 1.0
+shader_param/amplitude = 1.0
+shader_param/steepness = 1.0
+
+[sub_resource type="PlaneMesh" id=2]
+material = SubResource( 1 )
+subdivide_width = 64
+subdivide_depth = 64
+
+[node name="Spatial" type="Spatial"]
+
+[node name="grid2" type="MeshInstance" parent="."]
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="OmniLight" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0994107, 0 )

@@ -1,0 +1,32 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "VisualShaderNodeCustom",
+"class": "VisualShaderNodeGerstnerWaves",
+"language": "GDScript",
+"path": "res://addons/VShader_Nodes/GerstnerWaves.gd"
+} ]
+_global_script_class_icons={
+"VisualShaderNodeGerstnerWaves": ""
+}
+
+[application]
+
+config/name="Gerstner Waves Demo"
+config/description="A Visual shader gerstner waves addon and a demo implemented with the custom node"
+run/main_scene="res://WaveDemo.tscn"
+config/icon="res://icon.png"
+
+[rendering]
+
+quality/filters/anisotropic_filter_level=16
+quality/filters/use_nearest_mipmap_filter=true
+quality/filters/msaa=4
